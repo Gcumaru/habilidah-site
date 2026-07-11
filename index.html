@@ -339,6 +339,25 @@
   footer { border-top: 1px solid var(--line); padding: 26px 24px 40px; }
   .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 12.5px; color: var(--ink-soft); }
 
+  /* ---------- floating cta ---------- */
+  .floating-cta {
+    position: fixed;
+    left: max(16px, env(safe-area-inset-left));
+    bottom: max(16px, env(safe-area-inset-bottom));
+    z-index: 999;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green-cta);
+    color: #FCFFFC;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 13px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 12px 28px -10px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.18);
+  }
+
   @media (max-width: 860px) {
     .hero-grid { grid-template-columns: 1fr; }
     .phone-frame { justify-self: start; }
@@ -350,8 +369,8 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .btn-primary, .btn-chalk { transition: transform 0.15s ease; }
-    .btn-primary:hover, .btn-chalk:hover { transform: translateY(-1px); }
+    .btn-primary, .btn-chalk, .floating-cta { transition: transform 0.15s ease; }
+    .btn-primary:hover, .btn-chalk:hover, .floating-cta:hover { transform: translateY(-1px); }
   }
 
   :focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
@@ -609,6 +628,10 @@
     <span>Dúvidas: <a href="https://wa.me/5581999766919?text=Oi%2C%20quero%20adquirir%20o%20habilidah.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener" style="color: var(--violet-deep); font-weight:600;">WhatsApp</a></span>
   </div>
 </footer>
+
+<a class="floating-cta" href="https://wa.me/5581999766919?text=Oi%2C%20quero%20adquirir%20o%20habilidah.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener" aria-label="Comprar agora pelo WhatsApp">
+  💬 Comprar agora
+</a>
 
 </body>
 </html>
