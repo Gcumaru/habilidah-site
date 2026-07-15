@@ -201,6 +201,45 @@
   .phone-card .s { font-size: 10.5px; color: var(--ink-soft); margin-top: 1px; }
   .phone-card .chev { color: var(--ink-soft); font-size: 13px; }
 
+  /* ---------- ia spotlight ---------- */
+  .ia-section { padding: 60px 24px; }
+  .ia-grid {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .ia-grid .kicker-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .ia-points { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-direction: column; gap: 12px; }
+  .ia-points li { font-size: 14.5px; color: var(--ink-soft); display: flex; gap: 10px; align-items: baseline; }
+  .ia-points li::before { content: "✦"; color: var(--violet); font-weight: 700; flex-shrink: 0; }
+  .ia-points strong { color: var(--ink); }
+  .ia-frame {
+    justify-self: center;
+    width: 280px;
+    border-radius: 34px;
+    background: #140B24;
+    padding: 12px;
+    box-shadow: 0 30px 60px -24px rgba(36,25,71,0.5), 0 2px 0 rgba(0,0,0,0.3);
+  }
+  .ia-screen { background: var(--paper-raised); border-radius: 24px; overflow: hidden; }
+  .ia-chat-header {
+    background: var(--violet-solid);
+    color: #fff;
+    padding: 26px 16px 14px;
+  }
+  .ia-chat-header h3 { font-size: 14.5px; margin: 0 0 3px; font-weight: 700; }
+  .ia-chat-header p { font-size: 11px; margin: 0; color: #E6DBFB; font-family: var(--mono); }
+  .ia-chat-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; min-height: 160px; }
+  .ia-bubble-q { align-self: flex-end; background: var(--violet-solid); color: #fff; border-radius: 12px 12px 2px 12px; padding: 9px 13px; font-size: 13px; max-width: 88%; }
+  .ia-bubble-a { align-self: flex-start; background: var(--violet-tint); color: var(--ink); border-radius: 12px 12px 12px 2px; padding: 9px 13px; font-size: 13px; max-width: 88%; }
+  .ia-quota { font-size: 10.5px; color: var(--ink-soft); padding: 0 16px 6px; }
+  .ia-input-row { padding: 8px 16px 20px; border-top: 1px solid var(--line); display: flex; gap: 8px; align-items: center; }
+  .ia-input-fake { flex: 1; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; font-size: 12px; color: var(--ink-soft); }
+  .ia-send-btn { width: 34px; height: 34px; border-radius: 50%; background: var(--green-cta); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+
   /* ---------- section shell ---------- */
   section { padding: 54px 24px; }
   .section-head { max-width: 640px; margin: 0 auto 34px; }
@@ -370,9 +409,9 @@
   }
 
   @media (max-width: 860px) {
-    .hero-grid { grid-template-columns: 1fr; }
-    .phone-frame { justify-self: start; }
-    .pain-stack, .features { grid-template-columns: 1fr; }
+    .hero-grid, .ia-grid { grid-template-columns: 1fr; }
+    .phone-frame, .ia-frame { justify-self: start; }
+    .pain-stack, .features, .trial-stats { grid-template-columns: 1fr; }
     .hierarchy { flex-direction: column; }
     .h-step { margin-right: 0; margin-bottom: 18px; }
     .h-step::after { content: "↓"; right: auto; left: 18px; top: auto; bottom: -20px; transform: none; }
@@ -399,6 +438,7 @@
   </div>
   <nav>
     <a href="#teste">Teste grátis</a>
+    <a href="#ia">IA</a>
     <a href="#series">Séries</a>
     <a href="#recursos">Recursos</a>
     <a href="#comprar" class="cta-mini">Ativar agora</a>
@@ -546,22 +586,50 @@
   </div>
 </section>
 
+<section class="ia-section" id="ia" style="background: var(--paper-raised); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="ia-grid">
+    <div>
+      <div class="kicker-row">
+        <span class="novo-badge" style="margin-bottom: 0;">Novo</span>
+        <p class="kicker" style="margin: 0;">Falar com a IA</p>
+      </div>
+      <h2>Peça ajuda pra IA sem sair da habilidade que você está vendo.</h2>
+      <p class="lede" style="max-width: none;">
+        Um botão flutuante abre o chat de qualquer tela do app. Escolha a habilidade e pergunte — a resposta já vem
+        contextualizada pro código daquela habilidade, sem precisar explicar nada de novo.
+      </p>
+      <ul class="ia-points">
+        <li><strong>Respostas por habilidade</strong> — a IA já sabe o conteúdo, os objetos de conhecimento e a situação didática do código escolhido.</li>
+        <li><strong>Histórico por série</strong> — as conversas recentes ficam salvas e prontas pra reabrir.</li>
+        <li><strong>No teste:</strong> 4 perguntas por dia, até 150 caracteres cada. <strong>Ativado:</strong> sem limite de perguntas nem de caracteres.</li>
+      </ul>
+    </div>
+    <div class="ia-frame">
+      <div class="ia-screen">
+        <div class="ia-chat-header">
+          <h3>Falar com a IA</h3>
+          <p>EF03MA09</p>
+        </div>
+        <div class="ia-chat-body">
+          <div class="ia-bubble-q">Como trabalhar essa habilidade com material concreto?</div>
+          <div class="ia-bubble-a">Uma sugestão é usar blocos de encaixe para representar as adições, deixando os alunos manipularem antes de registrar no caderno.</div>
+        </div>
+        <p class="ia-quota">3 pergunta(s) restante(s) hoje (período de teste)</p>
+        <div class="ia-input-row">
+          <div class="ia-input-fake">Escreva sua pergunta…</div>
+          <div class="ia-send-btn">➤</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="recursos">
   <div class="section-head center">
     <p class="kicker">Recursos</p>
     <h2>Pensado para o dia a dia de quem planeja aula, não para quem programa planilha.</h2>
   </div>
   <div class="features">
-    <div class="feature-card">
-      <span class="novo-badge">Novo</span>
-      <div class="icon">✦</div>
-      <h3>Falar com a IA</h3>
-      <p>Escolha uma habilidade e pergunte pra IA — ela responde com base no conteúdo daquele código, direto no app. Um botão flutuante leva até lá de qualquer tela.</p>
-      <div class="mini-mock ia-chat">
-        <div class="bubble-q">Como trabalhar EF03MA09 com material concreto?</div>
-        <div class="bubble-a">Uma sugestão é usar blocos de encaixe para representar…</div>
-      </div>
-    </div>
     <div class="feature-card">
       <div class="icon">!</div>
       <h3>Alerta de atraso</h3>
