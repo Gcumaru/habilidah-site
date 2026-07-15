@@ -230,6 +230,13 @@
   .pain-card p { margin: 0; font-size: 14.5px; color: var(--ink-soft); }
   .pain-card strong { color: var(--ink); display: block; margin-bottom: 6px; font-size: 15.5px; }
 
+  /* ---------- trial stats ---------- */
+  .trial-stats { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .trial-stat { background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 20px; text-align: center; box-shadow: var(--card-shadow); }
+  .trial-stat .num { font-family: var(--display); font-size: 34px; font-weight: 700; color: var(--violet); display: block; margin-bottom: 6px; }
+  .trial-stat .label { font-size: 13.5px; color: var(--ink-soft); }
+  .trial-note { max-width: 1080px; margin: 22px auto 0; text-align: center; font-size: 13.5px; color: var(--ink-soft); }
+
   /* ---------- hierarchy diagram ---------- */
   .hierarchy { max-width: 1080px; margin: 0 auto; display: flex; align-items: stretch; flex-wrap: wrap; }
   .h-step {
@@ -283,6 +290,10 @@
   .mini-mock.situacao .label { font-size: 10.5px; font-weight: 700; color: var(--violet-deep); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
   .mini-mock.situacao .txt { font-size: 12px; color: var(--ink-soft); font-style: italic; margin-bottom: 8px; }
   .mini-mock.situacao .save-btn { display: inline-block; font-size: 11px; font-weight: 700; color: var(--violet-deep); background: var(--violet-tint); padding: 5px 10px; border-radius: 8px; }
+  .mini-mock.ia-chat { display: flex; flex-direction: column; gap: 6px; }
+  .mini-mock.ia-chat .bubble-q { align-self: flex-end; background: var(--violet-solid); color: #fff; border-radius: 10px 10px 2px 10px; padding: 7px 11px; font-size: 12px; max-width: 85%; }
+  .mini-mock.ia-chat .bubble-a { align-self: flex-start; background: var(--violet-tint); color: var(--ink); border-radius: 10px 10px 10px 2px; padding: 7px 11px; font-size: 12px; max-width: 85%; }
+  .novo-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; background: var(--green-cta); padding: 3px 9px; border-radius: 999px; margin-bottom: 10px; }
 
   /* ---------- series grid ---------- */
   .series-grid {
@@ -387,6 +398,7 @@
     </div>
   </div>
   <nav>
+    <a href="#teste">Teste grátis</a>
     <a href="#series">Séries</a>
     <a href="#recursos">Recursos</a>
     <a href="#comprar" class="cta-mini">Ativar agora</a>
@@ -408,7 +420,7 @@
       </p>
       <div class="hero-ctas">
         <a class="btn-primary" href="habilidah-teste.apk" download>⬇ Baixar e testar</a>
-        <span class="btn-note">Matemática 100% liberada para testar · Android · sem cadastro</span>
+        <span class="btn-note">10 dias de acesso completo pra testar · Android · sem cadastro</span>
       </div>
       <p style="margin-top: 14px;">
         <a href="#comprar" style="font-size: 13px; font-weight: 600; color: var(--violet-deep);">Já decidiu? Veja os planos e ative sua série →</a>
@@ -453,6 +465,28 @@
     </div>
   </div>
 </div>
+
+<section id="teste" style="background: var(--paper-raised); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="section-head center">
+    <p class="kicker">Período de teste</p>
+    <h2>10 dias pra testar tudo, sem cadastro.</h2>
+  </div>
+  <div class="trial-stats">
+    <div class="trial-stat">
+      <span class="num">10 dias</span>
+      <span class="label">a partir da primeira vez que você abre o app</span>
+    </div>
+    <div class="trial-stat">
+      <span class="num">100%</span>
+      <span class="label">das disciplinas e unidades letivas liberadas</span>
+    </div>
+    <div class="trial-stat">
+      <span class="num">0</span>
+      <span class="label">cartão ou cadastro necessário</span>
+    </div>
+  </div>
+  <p class="trial-note">Depois dos 10 dias, é só ativar a(s) série(s) que você quiser continuar usando — o que já ficou registrado no período de teste não se perde.</p>
+</section>
 
 <section>
   <div class="section-head">
@@ -518,6 +552,16 @@
     <h2>Pensado para o dia a dia de quem planeja aula, não para quem programa planilha.</h2>
   </div>
   <div class="features">
+    <div class="feature-card">
+      <span class="novo-badge">Novo</span>
+      <div class="icon">✦</div>
+      <h3>Falar com a IA</h3>
+      <p>Escolha uma habilidade e pergunte pra IA — ela responde com base no conteúdo daquele código, direto no app. Um botão flutuante leva até lá de qualquer tela.</p>
+      <div class="mini-mock ia-chat">
+        <div class="bubble-q">Como trabalhar EF03MA09 com material concreto?</div>
+        <div class="bubble-a">Uma sugestão é usar blocos de encaixe para representar…</div>
+      </div>
+    </div>
     <div class="feature-card">
       <div class="icon">!</div>
       <h3>Alerta de atraso</h3>
@@ -603,15 +647,16 @@
   <div class="pricing-wrap">
     <div class="pricing-card">
       <p class="eyebrow2">Ativação por série</p>
-      <p class="price">R$ 24,90</p>
+      <p class="price">R$ 29,90</p>
       <p class="price-note">Primeira série · cada série adicional por R$ 10,00</p>
       <div class="pricing-series">
         <span>1º Ano</span><span>2º Ano</span><span>3º Ano</span><span>4º Ano</span><span>5º Ano</span>
       </div>
       <ul class="pricing-list">
         <li>Todas as 4 unidades letivas e 8 disciplinas da série</li>
-        <li>Primeira série por R$ 24,90 — cada adicional por R$ 10,00</li>
+        <li>Primeira série por R$ 29,90 — cada adicional por R$ 10,00</li>
         <li>Código de ativação vinculado ao seu aparelho</li>
+        <li>IA sem limite de perguntas nem de caracteres</li>
         <li>Edição liberada até 31/12/2026 — depois, consulta em somente leitura</li>
         <li>Funciona offline depois de ativado</li>
       </ul>
